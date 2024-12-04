@@ -12,7 +12,7 @@ public class SubarrayWithSum {
             if (!map.containsKey(sum))
                 map.put(sum, i);
             if(map.containsKey(sum-k)){
-                if(maxLen<(i-map.get(sum - k)))
+                //if(maxLen<(i-map.get(sum - k)))
                     maxLen = i - map.get(sum - k);
             }
         }
