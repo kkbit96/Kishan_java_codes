@@ -33,10 +33,42 @@ public class LinkedList {
         }
         return -1;
     }
+    public static int recursiveSearch(Node head, int key, int index) {
+        if (head == null) {
+            return -1;
+        }
+        if (head.data == key) {
+            return index;
+        }
+        return recursiveSearch(head.next, key, index + 1);
+    }
+
+    public static Node insertAtBeginning(Node head, int data){
+        Node temp = new Node(data);
+        temp.next = head;
+        return temp;
+    }
+
+    //Insert at the end of the singly linked list
+    public static Node insertAtEnd(Node head, int data){
+        Node temp = new Node(data);
+        if(head==null){
+            return temp;
+        }
+        Node curr = head;
+        while(curr.next!=null){
+            curr = curr.next;
+        }
+        curr.next = temp;
+        return head;
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         traverse(ll.head);
         System.out.println();
+        recursivePrint(ll.head);
+        System.out.println();
+        insertAtEnd(ll.head, 50);
         recursivePrint(ll.head);
     }
 }

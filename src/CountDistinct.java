@@ -15,15 +15,5 @@ public class CountDistinct {
     //         }
     //     }
     //     return count;
-    public static int countDistinct(Integer arr[]) {   
-        HashSet<Integer> set = new HashSet<>();
-        for (int num : arr) {
-            set.add(num);
-        }
-        return set.size();
-    }
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 1, 3, 4, 2, 3};
-        System.out.println(countDistinct(arr));
-    }
+
 }
