@@ -136,25 +136,18 @@ public class LinkedList {
         }
         return slow.data;
     }
-    //Print nth node from the end of a linked list
-    public static int nFromEnd(Node head){
-        if(head==null){
-            return -1;
+    //Return nth node from the end of a linked list
+    public static int nFromEnd(Node head, int n){
+        int len = 0;
+        for(Node curr = head; curr!=null; curr = curr.next){
+            len++;
         }
-        Node first = head;
-        int n = 2;
-        while(n-->0){
-            if(first==null){
-                return -1;
-            }
-            first = first.next;
+        if(len<n) return -1;
+        Node curr = head;
+        for(int i=0;i<len-n+1;i++){
+            curr = curr.next;
         }
-        Node second = head;
-        while(first.next!=null){
-            first = first.next;
-            second = second.next;
-        }
-        return second.data;
+        return curr.data;
     }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
