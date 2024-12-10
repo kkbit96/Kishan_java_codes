@@ -104,6 +104,25 @@ public class LinkedList {
         curr.next = temp;
         return head;
     }
+
+    //Sorted insert in a singly linked list
+    public static Node SortedInsert(Node head, int data){
+        Node temp = new Node(data);
+        if(head==null){
+            return temp;
+        }
+        if(data<head.data){
+            temp.next = head;
+            return temp;
+        }
+        Node curr = head;
+        while(curr.next!=null && curr.next.data<data){
+            curr = curr.next;
+        }
+        temp.next = curr.next;
+        curr.next = temp;
+        return head;
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         traverse(ll.head);
@@ -114,6 +133,9 @@ public class LinkedList {
         recursivePrint(ll.head);
         insertAtIndex(ll.head, 3, 25);
         System.out.println();
+        recursivePrint(ll.head);
+        System.out.println();
+        SortedInsert(ll.head, 35);
         recursivePrint(ll.head);
     }
 }
