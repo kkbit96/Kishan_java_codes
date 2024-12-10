@@ -165,5 +165,6 @@ public class LinkedList {
         recursivePrint(ll.head);
         System.out.println();
         System.out.println(middle(ll.head));
+        System.out.println(nFromEnd(ll.head, 2));
     }
 }
