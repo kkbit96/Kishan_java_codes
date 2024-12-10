@@ -136,7 +136,26 @@ public class LinkedList {
         }
         return slow.data;
     }
-
+    //Print nth node from the end of a linked list
+    public static int nFromEnd(Node head){
+        if(head==null){
+            return -1;
+        }
+        Node first = head;
+        int n = 2;
+        while(n-->0){
+            if(first==null){
+                return -1;
+            }
+            first = first.next;
+        }
+        Node second = head;
+        while(first.next!=null){
+            first = first.next;
+            second = second.next;
+        }
+        return second.data;
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         traverse(ll.head);
