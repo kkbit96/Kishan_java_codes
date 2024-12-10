@@ -123,6 +123,20 @@ public class LinkedList {
         curr.next = temp;
         return head;
     }
+
+    //Middle of a singly linked list
+    public static int middle(Node head){
+        if(head==null){
+            return -1;
+        }
+        Node slow = head, fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.data;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         traverse(ll.head);
@@ -137,5 +151,7 @@ public class LinkedList {
         System.out.println();
         SortedInsert(ll.head, 35);
         recursivePrint(ll.head);
+        System.out.println();
+        System.out.println(middle(ll.head));
     }
 }
