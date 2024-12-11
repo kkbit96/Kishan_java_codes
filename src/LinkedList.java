@@ -149,6 +149,17 @@ public class LinkedList {
         }
         return curr.data;
     }
+    //Reverse a singly linked list - - Revise this algorithm
+    public static Node reverse(Node head){
+        Node prev = null, curr = head;
+        while(curr!=null){
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         traverse(ll.head);
