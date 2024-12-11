@@ -69,6 +69,24 @@ public class LinkedList {
         }
         return head.next;
     }
+    //Delete from a given position
+    public static Node deleteFromPos(Node head, int pos) {
+        if(head == null) {
+            return null;
+        }
+        if(pos == 1) {
+            return head.next;
+        }
+        Node curr = head;
+        for(int i=1; i<=pos-2 && curr!=null; i++) {
+            curr = curr.next;
+        }
+        if(curr == null || curr.next == null) {
+            return head;
+        }
+        curr.next = curr.next.next;
+        return head;
+    }
     //Delete last node of a singly linked list
     public static Node deleteLastNode(Node head){
         if(head==null || head.next==null){
